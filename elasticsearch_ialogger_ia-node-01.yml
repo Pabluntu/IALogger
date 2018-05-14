@@ -1,0 +1,11 @@
+cluster.name: ia-logger
+node.name: ia-node-01
+node.master: true
+node.data: true
+node.max_local_storage_nodes: 2
+path.data: C:\Users\Pablo\SkyDrive\UNIR\TFM\elastic_stack_data
+path.logs: C:\elastic_stack\logs
+http.port: 9200
+discovery.zen.minimum_master_nodes: 2
+discovery.zen.ping.unicast.hosts: ["127.0.0.1"]
+

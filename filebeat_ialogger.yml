@@ -1,0 +1,17 @@
+filebeat.prospectors:
+- input_type: log
+paths:
+- C:\elastic_stack\test_data\logs\*
+encoding: UTF-8
+scan_frequency: 10s
+max_bytes: 10485760
+output.logstash:
+  enabled: true
+  hosts: ["localhost:5044"]
+output.console:
+  enabled: true
+  pretty: true
+logging.level: info
+logging.to_files: true
+logging.files:
+  rotateeverybytes: 10485760 # = 10MB
