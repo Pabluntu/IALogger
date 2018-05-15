@@ -1,0 +1,4 @@
+# yyyy-MM-dd HH:mm:ss,SSS eg: 2014-01-09 17:32:25,527
+NET_DATESTAMP %{YEAR}-%{MONTHNUM}-%{MONTHDAY} %{HOUR}:?%{MINUTE}(?::?%{SECOND})
+# eg: 2018-05-04 10:46:27,071 [5] TRACE - logmessage.
+NETLOGMESSAGE %{NET_DATESTAMP:timestamp} \[%{NUMBER:threadid}\] %{LOGLEVEL:level} - %{GREEDYDATA:logmessage}

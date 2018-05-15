@@ -1,0 +1,6 @@
+# MMM other than eng
+CUSMONTH (?:%{MONTH}|[A-Za-z]{3})
+# dd-MMM-yyyy HH:mm:ss
+JAVA_DATESTAMP %{MONTHDAY}-%{CUSMONTH}-%{YEAR} %{HOUR}:?%{MINUTE}(?::?%{SECOND})
+# eg: 13-abr-2016 10:04:39 org.apache.coyote.AbstractProtocol init INFO: Initializing ProtocolHandler ["http-bio-8081"]
+CUSJAVALOG %{JAVA_DATESTAMP:timestamp} %{GREEDYDATA:class} %{GREEDYDATA:method} %{LOGLEVEL:level}: %{GREEDYDATA:logmessage}
