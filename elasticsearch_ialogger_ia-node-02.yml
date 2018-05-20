@@ -3,7 +3,7 @@ node.name: ia-node-02
 node.master: true
 node.data: true
 node.max_local_storage_nodes: 2
-path.data: C:\Users\Pablo\SkyDrive\UNIR\TFM\elastic_stack_data
+path.data: C:\elastic_stack\elasticsearch-5.1.1\elastic_stack_data
 path.logs: C:\elastic_stack\logs
 http.port: 9201
 discovery.zen.minimum_master_nodes: 2
