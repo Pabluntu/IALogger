@@ -1,28 +1,22 @@
 filebeat.prospectors:
+
 - input_type: log
   paths:
-  - C:\elastic_stack\test_data\logs_JAVA\logs\*
+    - C:\elastic_stack\log_data\logs_JAVA\logs\*
   document_type: java-logs
   multiline.pattern: '^[0-9]{2}-[A-Za-z]{3}-[0-9]{4}'
   multiline.negate: true
   multiline.match: after
+
 - input_type: log
   paths:
-  - C:\elastic_stack\test_data\logs_NET_CORE\logs\*
+    - C:\elastic_stack\log_data\logs_NET_CORE\logs\*
+    - C:\elastic_stack\log_data\logs_NET_CORE\logs\bo\*
+    - C:\elastic_stack\log_data\logs_NET_CORE\logs\brew\*
   document_type: net-logs
   multiline.pattern: '^\[[0-9]{4}-[0-9]{2}-[0-9]{2}'
   multiline.negate: true
   multiline.match: after
-encoding: UTF-8
-scan_frequency: 10s
-max_bytes: 10485760
+
 output.logstash:
-  enabled: true
   hosts: ["localhost:5044"]
-output.console:
-  enabled: true
-  pretty: true
-logging.level: info
-logging.to_files: true
-logging.files:
-  rotateeverybytes: 10485760 # = 10MB
